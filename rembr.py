@@ -3,12 +3,12 @@ import urllib2
 #from HTMLParser import HTMLParser
 
 
-from bs4 import BeautifulSoup as Soup
+#from bs4 import BeautifulSoup as Soup
 #from BeautifulSoup import BeautifulSoup as Soup
 #from soupselect import select
 
 
-from time import gmtime, strftime
+from time import gmtime, strftime, localtime 
 
 from pyquery import PyQuery as pq 
 from lxml import etree
@@ -100,7 +100,7 @@ def parse_old( page  ):
 
 def main( out_dir ):
 	#parser = MyHTMLParser()
-	time_str = strftime("%m-%d-%H-%M-%S", gmtime())
+	time_str = strftime("%m-%d-%H-%M-%S", localtime())
 	outf = open( "%s/%s.csv" % ( out_dir, time_str ) , "w")
 
 	while True: 
